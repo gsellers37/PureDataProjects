@@ -1,0 +1,2 @@
+#N canvas 0 50 217 418 10;
+#X obj -1 -1 dice_roller;

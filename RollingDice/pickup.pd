@@ -1,0 +1,46 @@
+#N canvas 588 202 520 720 10;
+#X obj 210 327 clink;
+#X obj 151 113 inlet start;
+#X obj 178 285 slide;
+#X obj 211 404 pan;
+#X obj 151 164 i;
+#X obj 183 164 + 1;
+#X obj 288 160 r num_dice;
+#X obj 146 212 sel 1;
+#X obj 211 426 dac~;
+#X msg 106 119 0;
+#X obj 178 257 t b;
+#X obj 151 187 >=;
+#X obj 288 182 - 1;
+#X text 380 172 n-1 clinks;
+#X obj 219 306 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 58 321 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 58 149 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 255 282 Do a slide for a random amount of time;
+#X text 271 331 clink at the end of the slide;
+#X text 261 404 need to automate the panning;
+#X obj 210 349 *~ 0.5;
+#X connect 0 0 20 0;
+#X connect 1 0 4 0;
+#X connect 2 0 3 0;
+#X connect 2 1 0 0;
+#X connect 2 1 14 0;
+#X connect 3 0 8 0;
+#X connect 3 1 8 1;
+#X connect 4 0 5 0;
+#X connect 4 0 11 0;
+#X connect 5 0 4 1;
+#X connect 6 0 12 0;
+#X connect 7 0 9 0;
+#X connect 7 1 10 0;
+#X connect 9 0 4 1;
+#X connect 10 0 2 0;
+#X connect 11 0 7 0;
+#X connect 12 0 11 1;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 4 0;
+#X connect 20 0 3 0;

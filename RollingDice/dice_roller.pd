@@ -1,0 +1,43 @@
+#N canvas 1001 214 608 703 10;
+#X obj 0 10 cnv 15 185 390 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 75 291 bng 100 250 50 0 empty empty empty 17 7 0 10 -191407
+-1 -1;
+#X obj 75 72 bng 100 250 50 0 empty empty empty 17 7 0 10 -191407 -1
+-1;
+#X text 99 114 Pick Up;
+#X text 104 333 Throw;
+#X obj 10 21 cnv 15 165 40 empty empty empty 20 12 0 14 -191407 -66577
+0;
+#X text 10 33 Synthesized Dice Roller;
+#X obj 10 72 cnv 15 55 320 empty empty empty 20 12 0 14 -191407 -66577
+0;
+#X obj 23 118 vradio 26 1 0 10 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X text 13 81 Number of Dice, f 8;
+#X text 30 123 1;
+#X text 31 149 2;
+#X text 31 176 3;
+#X text 31 201 4;
+#X text 32 227 5;
+#X text 32 253 6;
+#X text 31 279 7;
+#X text 32 305 8;
+#X text 32 331 9;
+#X text 28 357 10;
+#X obj 23 569 s num_dice;
+#X obj 503 237 pickup;
+#X obj 23 543 + 1;
+#X obj 198 426 shake;
+#X obj 75 433 throw;
+#X obj 75 182 bng 100 250 50 0 empty empty empty 17 7 0 10 -191407
+-1 -1;
+#X text 105 223 Shake;
+#X text 55 542 radio is zero indexed \, so +1 to = dice;
+#X connect 1 0 24 0;
+#X connect 1 0 23 1;
+#X connect 2 0 21 0;
+#X connect 8 0 22 0;
+#X connect 22 0 20 0;
+#X connect 25 0 23 0;
+#X coords 0 -1 1 1 185 390 1 0 10;

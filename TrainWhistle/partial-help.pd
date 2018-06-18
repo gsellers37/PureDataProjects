@@ -1,0 +1,44 @@
+#N canvas 1317 213 553 356 10;
+#X obj 193 278 s q;
+#X msg 193 171 0 \, 1 500 0 \, 0.75 500 500 \, 0 500 2000;
+#X obj 193 193 vline~;
+#X obj 193 215 s~ env;
+#X msg 334 23 \; pd dsp 1;
+#X text 91 26 additive synthesis building tool;
+#X text 21 66 Takes an argument that is the center frequency for band
+passed noise. The first inlet can be connected to outlets of sound
+sources or other partial functions to stack additive frequencies. The
+second inlet is used to set amplitude. Addition \, a q factor needs
+to be sent as long as an envelope used for frequency modulation of
+the partial.;
+#X text 236 270 sets Q factor;
+#X text 248 201 creates frequency envelope;
+#X obj 32 288 *~;
+#X obj 32 340 dac~;
+#X obj 46 265 r~ env;
+#X msg 111 180 1;
+#X msg 111 202 0.5;
+#X msg 111 224 0.25;
+#X obj 90 160 loadbang;
+#X obj 31 28 partial;
+#X obj 32 197 partial 200;
+#X obj 32 219 partial 400;
+#X obj 32 241 partial 600;
+#X msg 193 256 200;
+#X obj 32 310 *~ 15;
+#X text 74 314 amplify since filtered noise is quiet;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 9 0 21 0;
+#X connect 11 0 9 1;
+#X connect 12 0 17 1;
+#X connect 13 0 18 1;
+#X connect 14 0 19 1;
+#X connect 15 0 12 0;
+#X connect 15 0 13 0;
+#X connect 15 0 14 0;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 19 0 9 0;
+#X connect 20 0 0 0;
+#X connect 21 0 10 0;

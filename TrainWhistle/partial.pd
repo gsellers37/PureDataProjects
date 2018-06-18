@@ -1,0 +1,43 @@
+#N canvas 541 270 751 422 10;
+#X obj 61 58 r~ env;
+#X obj 61 80 *~ 0.2;
+#X obj 61 102 +~ 0.85;
+#X obj 61 175 *~;
+#X obj 76 151 \$1;
+#X obj 50 225 vcf~;
+#X obj 50 32 noise~;
+#X obj 71 202 r q;
+#X obj 50 294 *~;
+#X obj 50 346 +~;
+#X obj 65 325 inlet~;
+#X obj 50 368 outlet~;
+#X obj 76 127 loadbang;
+#X obj 82 267 \$2;
+#X obj 84 245 inlet;
+#X text 103 29 start with noise;
+#X text 140 125 <- multiply the range by the fundamental and use it
+to set the center frequency of the band pass filter., f 35;
+#X text 129 90 <- change the range to 0.85 to 1.05;
+#X text 117 56 <- take the vline envelope from the main code that ranges
+from 0 to 1, f 36;
+#X text 123 200 <- take the q factor from the main code and apply it
+to the band pass filter, f 41;
+#X text 138 257 <- multiply the output by the relative amplitude for
+this partial, f 38;
+#X text 136 339 <- add this partial to the partials given at the input
+of the function and send it to the output. This allows objects to be
+stacked on each other for neater code.;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 1;
+#X connect 4 0 3 1;
+#X connect 5 0 8 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 2;
+#X connect 8 0 9 0;
+#X connect 9 0 11 0;
+#X connect 10 0 9 1;
+#X connect 12 0 4 0;
+#X connect 13 0 8 1;
+#X connect 14 0 13 0;
